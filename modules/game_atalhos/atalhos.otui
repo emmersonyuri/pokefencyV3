@@ -1,0 +1,63 @@
+flyUp < UIButton
+  width: 32
+  height: 32
+  image-size: 32 32
+  image-clip: 0 0 0 0
+  image-color: white
+  focusable: false
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin-top:-5
+  margin-left:-10
+  image-source: /images/icons/fly_up_icon
+  @onClick: flyUp()
+  !tooltip: tr('Fly Up - Voar mais alto')
+  
+flyDown < UIButton
+  width: 32
+  height: 32
+  image-size: 32 32
+  image-clip: 0 0 0 0
+  image-color: white
+  focusable: false
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin-left:25
+  margin-top:-5
+  image-source: /images/icons/fly_down_icon
+  @onClick: flyDown()
+  !tooltip: tr('Fly Down - Voar mais baixo')
+  
+cdButton < UIButton
+  width: 32
+  height: 32
+  image-size: 32 32
+  image-clip: 0 0 0 0
+  image-color: white
+  focusable: false
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin-left:60
+  margin-top:-5
+  image-source: /images/icons/cd_icon
+  @onClick: cd()
+  !tooltip: tr('Cooldown check - Verificar cd do Pokemon')
+
+MainWindow
+  id: atalhos
+  size: 115  70
+  draggable: true
+  margin-top:300
+  focusable: false
+  &save: true
+  image-source: /images/icons/bg_tool
+  @onEscape: self:hide()
+  
+  flyUp
+    id:flyUp
+  
+  flyDown
+    id:flyDown
+  
+  cdButton
+    id:cdButton

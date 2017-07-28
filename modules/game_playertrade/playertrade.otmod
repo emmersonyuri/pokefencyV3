@@ -1,0 +1,9 @@
+Module
+  name: game_playertrade
+  description: Trade System. Troca entre players
+  author: Mooney
+  website: none
+  sandboxed: true
+  scripts: [ playertrade ]
+  @onLoad: init()
+  @onUnload: terminate()

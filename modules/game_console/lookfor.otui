@@ -1,0 +1,77 @@
+QuestLabel < Label
+  font: verdana-11px-monochrome
+  text-offset: 2 0
+  focusable: true
+  background-color: alpha
+  $focus:
+    background-color: #444444
+
+
+UIItemQuest < Label
+  font: verdana-11px-monochrome
+  text-offset: 2 0
+  focusable: true
+  color: #aaaaaa
+  background-color: alpha
+
+  $on:
+    color: #00aa00
+  $!on:
+    color: #aaaaaa
+
+  $focus:
+    background-color: #444444
+
+  $on focus:
+    color: #00ff00
+  $!on focus:
+    color: #ffffff
+  UIItem
+    id: jaaj
+    size: 32 32
+    anchors.bottom: parent.top
+    anchors.left: parent.left
+    margin-left: 3
+    margin-bottom: -33
+
+
+MainWindow
+  id: leWindows
+  !text: tr('Search for')
+  size: 300 140
+  @onEscape: modules.game_console.openFind_destroy()
+  TextEdit
+    id: msgs
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+    margin-right: 6
+    margin-left: 6
+    margin-bottom: 6
+    shift-navigation: true
+    max-length: 255
+  UIItem
+    anchors.top: ignore.top
+    anchors.left: ignore.right
+    margin-left: 3
+    !text: tr('Search in all chats')
+  CheckBox
+    id: ignore
+    anchors.top: msgs.bottom
+    margin-top: 6
+    @onClick: modules.game_console.setLookForAll(self)
+    anchors.left: parent.left
+  Button
+    id: closeButton
+    anchors.bottom: parent.bottom
+    anchors.right: next.left
+    !text: tr('Find')
+    width: 90
+    @onClick: modules.game_console.openFind_search()
+  Button
+    id: closeButton
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    !text: tr('Close')
+    width: 90
+    @onClick: modules.game_console.openFind_destroy()

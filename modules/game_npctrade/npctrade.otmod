@@ -1,0 +1,9 @@
+Module
+  name: game_npctrade
+  description: NPC by PokeXgames
+  author: Mooney
+  website: none
+  sandboxed: true
+  scripts: [ npctrade ]
+  @onLoad: init()
+  @onUnload: terminate()

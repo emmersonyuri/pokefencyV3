@@ -1,0 +1,13 @@
+Module
+  name: Atalhos
+  description: Atalhos para comandos
+  author: Luxy
+  website: pokecentro.net
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ atalhos ]
+  sandboxed: false
+  @onLoad: init()
+  @onUnload: terminate()

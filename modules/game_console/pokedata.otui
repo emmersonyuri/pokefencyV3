@@ -1,0 +1,105 @@
+MiniWindow
+  image-source: infow.png
+  id: PokeData
+  !text: tr('Poke Info')
+  height: 146
+  &save: true
+  icon: pokemon.png
+  @onClose: modules.game_console.callpokedata()
+  MiniWindowContents
+  UIItem
+    id: SL
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-left: 3
+    size: 40 40
+    margin-top: 35
+    margin-left: 13
+    phantom: false
+    opacity: 2
+  ProgressBar
+    id: bar
+    !text: tr('??/??')
+    anchors.top: nome.bottom
+    anchors.left: nome.left
+    anchors.right: nome.right
+    margin-top: 2
+  ProgressBar
+    id: fishbar
+    height: 14
+    background-color: #44ff44
+    anchors.top: prev.bottom
+    anchors.left: prev.left
+    anchors.right: prev.right
+    margin-top: 2
+  UIItem
+    image-source: namecamp.png
+    id: nome
+    width: 130
+    color: white
+    font: verdana-11px-rounded
+    anchors.top: SL.top
+    anchors.left: SL.right
+    margin-left: 4
+    margin-top: -2
+    text:
+  Button
+    width: 60
+    id: mve
+    !text: tr('Order')
+    anchors.left: parent.left
+    anchors.top: SL.bottom
+    margin-left: 5
+    margin-top: 14
+    @onClick: modules.game_console.pressB('m')
+  Button
+    width: 60
+    id: locka
+    !text: tr('Unlock')
+    anchors.left: prev.right
+    anchors.top: prev.top
+    margin-left: 1
+    @onClick: modules.game_console.pressB('b')
+  Button
+    width: 60
+    id: reala
+    !text: tr('Heal')
+    anchors.left: parent.left
+    anchors.top: mve.bottom
+    margin-left: 5
+    margin-top: 6
+    enabled: false
+    @onClick: modules.game_console.pressB('h')
+  Button
+    width: 60
+    id: locka
+    !text: tr('Run')
+    anchors.left: prev.right
+    anchors.top: mve.bottom
+    margin-left: 1
+    margin-top: 6
+    @onClick: modules.game_console.pressB('c')
+  TabButton
+    id: LBB
+    anchors.left: prev.right
+    anchors.top: reala.top
+    margin-top: -15
+    icon: lefticon.png
+    @onClick: modules.game_console.pressA(3)
+  TabButton
+    anchors.left: prev.right
+    anchors.top: reala.top
+    margin-top: -25
+    icon: upicon.png
+    @onClick: modules.game_console.pressA(0)
+  TabButton
+    anchors.left: LBB.right
+    anchors.top: prev.bottom
+    icon: downicon.png
+    margin-top: 1
+    @onClick: modules.game_console.pressA(2)
+  TabButton
+    anchors.left: prev.right
+    anchors.top: LBB.top
+    icon: righticon.png
+    @onClick: modules.game_console.pressA(1)
